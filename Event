@@ -75,6 +75,7 @@ HubExclusivoTab:AddButton({
         end
     end
 })
+
 local InfiniteYieldTab = Window:MakeTab({
     Name = "FUNÇÕES A+",
     Icon = "rbxassetid://4483345998",
@@ -86,6 +87,6 @@ InfiniteYieldTab:AddSection({ Name = "FUNÇÕES ADICIONAIS" })
 InfiniteYieldTab:AddButton({
     Name = "InfiniteYield",
     Callback = function()
-        loadstring(game:HttpGet('https://raw.githubusercontent.com/hakaiofc/EdgeIYinfiniteyield/main/mastersource'))()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/hakai0fc/EdgeIY/refs/heads/main/infiniteyield'))()
     end
 })
