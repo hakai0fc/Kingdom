@@ -32,7 +32,7 @@ local HubExclusivoTab = Window:MakeTab({
 HubExclusivoTab:AddSection({ Name = "Auto-Farm" })
 
 HubExclusivoTab:AddButton({
-    Name = "TP Atras Summon",
+    Name = "TP Atrás Summon",
     Callback = function()
         local destino = Vector3.new(-25, 772, -238) 
         if LP.Character and LP.Character:FindFirstChild("HumanoidRootPart") then
