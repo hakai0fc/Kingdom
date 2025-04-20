@@ -1,0 +1,80 @@
+-- Load Orion Library
+local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/hakaiofc/Base/main/HUBORION'))()
+
+-- ANTI AFK
+pcall(function()
+    local VirtualUser = game:service'VirtualUser'
+    game:service'Players'.LocalPlayer.Idled:connect(function()
+        VirtualUser:CaptureController()
+        VirtualUser:ClickButton2(Vector2.new())
+    end)
+end)
+
+-- GLOBALS
+local LP = game.Players.LocalPlayer
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+-- Criando Interface
+local Window = OrionLib:MakeWindow({
+    Name = "Teleport HUB",
+    HidePremium = false,
+    SaveConfig = true,
+    ConfigFolder = "OrionTest",
+    IntroEnabled = false
+})
+
+local HubExclusivoTab = Window:MakeTab({
+    Name = "Menu Exclusivo",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+HubExclusivoTab:AddSection({ Name = "Auto-Farm" })
+
+HubExclusivoTab:AddButton({
+    Name = "TP Atras Summon",
+    Callback = function()
+        local destino = Vector3.new(-25, 772, -238) 
+        if LP.Character and LP.Character:FindFirstChild("HumanoidRootPart") then
+            LP.Character:MoveTo(destino)
+        else
+            warn("Personagem não encontrado ou carregando...")
+        end
+    end
+})
+HubExclusivoTab:AddButton({
+    Name = "TP Play",
+    Callback = function()
+        local destino = Vector3.new(-168, 848, -589) 
+        if LP.Character and LP.Character:FindFirstChild("HumanoidRootPart") then
+            LP.Character:MoveTo(destino)
+        else
+            warn("Personagem não encontrado ou carregando...")
+        end
+    end
+})
+HubExclusivoTab:AddButton({
+    Name = "TP Shenglong",
+    Callback = function()
+        local destino = Vector3.new(-36, 846, -785) 
+        if LP.Character and LP.Character:FindFirstChild("HumanoidRootPart") then
+            LP.Character:MoveTo(destino)
+        else
+            warn("Personagem não encontrado ou carregando...")
+        end
+    end
+})
+local InfiniteYieldTab = Window:MakeTab({
+    Name = "FUNÇÕES A+",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+InfiniteYieldTab:AddSection({ Name = "FUNÇÕES ADICIONAIS" })
+
+InfiniteYieldTab:AddButton({
+    Name = "InfiniteYield",
+    Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/hakaiofc/EdgeIYinfiniteyield/main/mastersource'))()
+    end
+})
